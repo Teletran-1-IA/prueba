@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba de orientacion vocacional</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            padding: 50px;
+        }
+        .photo-box {
+            width: 100%;
+            padding-top: 98%; /* Ajustar la altura para que el recuadro sea más ancho horizontalmente */
+            position: relative;
+            background-color: #f0f0f0;
+            border: 1px solid #979797;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        .photo-box img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .photo-content {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            padding: 10px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        .photo-content p {
+            margin: 0 0 10px 0;
+        }
+        .photo-content a {
+            display: inline-block;
+            padding: 5px 10px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .photo-content a:hover {
+            background-color: #0056b3;
+        }
+        .argument-text {
+            font-size: 18px; /* Ajusta el tamaño del texto como desees */
+            margin: 0 80px; /* Reduce el margen izquierdo y derecho */
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <div class="content">
+            <div class="menu container">
+                <a href="index.html" class="logo">Yo Estudio</a>
+                <input type="checkbox" id="menu"/>
+                <label for="menu">
+                    <img src="images/menu.png" class="menu-icono" alt="">
+                </label>
+                <nav class="navbar">
+                    <ul>
+                        <li><a href="Inicio.html">Inicio</a></li>
+                        <li><a href="clases.html">Clases</a></li>
+                        <li><a href="pruebas.html">Pruebas</a></li>
+                        <li><a href="cuaderno.html">Cuaderno</a></li>
+                        <li><a href="univ.html">Universidades</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <h1>Pruebas</h1>
+    <div class="argument-text">
+        <h6>Para ayudarte a decidir qué estudiar, hemos preparado diversos tests de orientación vocacional. A 
+        continuación, te presentamos un test general y otros específicos para cada una de las disciplinas académicas estos tests 
+        están diseñados para ofrecerte una visión más clara de tus intereses y aptitudes, ayudándote a tomar una decisión 
+        informada sobre tu futuro académico.</h6>
+    </div>
+    <div class="photo-grid">
+        <div class="photo-box">
+            <img src="images/test.jpg" alt="">
+            <div class="photo-content">
+                <strong>Prueba de  Técnologia</strong>
+                <p>Este es un test específico que encontrarás carreras técnologicas. Algunas carreras 
+                    de esta área son:</p>
+                    <ul>
+                        <li>Mecánica Automotriz</li>
+                        <li>Electricidad Industrial</li>
+                        <li>Química Farmacéutica</li>
+                    </ul>
+                <a href="orientados/multi/multi.html">Vamos al test</a>
+            </div>
+        </div>
+        <div class="photo-box">
+            <img src="images/foto2.jpg" alt="">
+            <div class="photo-content">
+                <strong>Prueba de Ciencias Biologicas</strong>
+                <p>Este es un test específico de las ciencias biológicas y agropecuarias. Algunas carreras 
+                    de esta área son:</p>
+                    <ul>
+                        <li>Ingeniería Agronomica</li>
+                        <li>Ingeniería en Zootecnia e Industria Pecuaria</li>
+                        <li>Medicina Veterinaria y Zootecnia</li>
+                    </ul>
+                    
+                <a href="orientados/Biologicas/biologicas.html">Vamos al test</a>
+            </div>
+        </div>
+        <div class="photo-box">
+            <img src="images/economia.jpg" alt="Foto 3">
+            <div class="photo-content">
+                <strong>Prueba de Ciencias Economias</strong>
+                <p>Este es un test específico de las ciencias Economicas y Administrativas. Algunas carreras 
+                    de esta área son:</p>
+                    <ul>
+                        <li>Contaduría Pública</li>
+                        <li>Economía</li>
+                        <li>Administracion de Empresas</li>
+                    </ul>
+                <a href="orientados/Economia/econimia.html">Vamos al test</a>
+            </div>
+        </div>
+        <div class="photo-box">
+            <img src="images/ciencias exactas.jpg" alt="Foto 4">
+            <div class="photo-content">
+                <strong>Prueba de Ciencias Exactas</strong>
+                <p>Este es un test específico de las ciencias exactas. Algunas carreras 
+                    de esta área son:</p>
+                    <ul>
+                        <li>Matemáticas</li>
+                        <li>Física</li>
+                        <li>Química</li>
+                    </ul>
+                <a href="orientados/Exactas/exactas.htm">Vamos al test</a>
+            </div>
+        </div>
+        <div class="photo-box">
+            <img src="images/ciencias educacion.jpg" alt="Foto 5">
+            <div class="photo-content">
+                <strong>Prueba de Ciencias de la Educacion</strong>
+                <p>Este es un test específico de las ciencias de la educacion. Algunas carreras 
+                    de esta área son:</p>
+                    <ul>
+                        <li>Licenciado en Educación</li>
+                        <li>Licenciado en Psicopedagogía</li>
+                        <li>Licenciado en Enseñanza del Inglés</li>
+                    </ul>
+                <a href="orientados/Educacion/educacion.html">Vamos al test</a>
+            </div>
+        </div>
+        <div class="photo-box">
+            <img src="images/arquitectura.jpg" alt="Foto 6">
+            <div class="photo-content">
+                <strong>Prueba de Arte, Arquitectura y Diseño</strong>
+                <p>Este es un test específico de arte aruitectura y diseño. Algunas carreras 
+                    de esta área son:</p>
+                    <ul>
+                        <li>Arquitectura</li>
+                        <li>Diseño Gráfico</li>
+                        <li>Artes Plásticas</li>
+                    </ul>
+                <a href="orientados/Arquitectura/arquitectura.html">Vamos al test</a>
+            </div>
+        </div>
+        <div class="photo-box">
+            <img src="images/sociales ii.jpg">
+            <div class="photo-content">
+                <strong>Prueba de Ciencias Sociales</strong>
+                <p>Este es un test específico de las ciencias sociales. Algunas carreras 
+                    de esta área son:</p>
+                    <ul>
+                        <li>Licenciatura en Historia</li>
+                        <li>Licenciatura en Psicologia</li>
+                        <li>Ciencias Politicas</li>
+                    </ul>
+                <a href="orientados/sociales/Soc.html">Vamos al test</a>
+            </div>
+        </div>
+        <div class="photo-box">
+            <img src="images/ciencias de la salud.jpg" alt="Foto 8">
+            <div class="photo-content">
+                <strong>Prueba de Ciencias de la Salud</strong>
+                <p>Este es un test específico de las ciencias de la salud. Algunas carreras 
+                    de esta área son:</p>
+                    <ul>
+                        <li>Licenciatura en Medicina</li>
+                        <li>Licenciatura en Nutricion y Dietetica</li>
+                        <li>Licenciatura en Farmaceutica</li>
+                    </ul>
+                <a href="orientados/salud/salud.html">Vamos al test</a>
+            </div>
+        </div>
+        <div class="photo-box">
+            <img src="images/ingenieria.jpg" alt="Foto 9">
+            <div class="photo-content">
+                <strong>Prueba de Ingenieria</strong>
+                <p>Este es un test específico de la poderosa ingeniería. Algunas carreras 
+                    de esta área son:</p>
+                    <ul>
+                        <li>Ingeniería Civil</li>
+                        <li>Ingeriería de Sistemas</li>
+                        <li>Ingeniería Mecatrónica</li>
+                    </ul>
+                <a href="orientados/ing/ing.html">Vamos al test</a>
+            </div>
+        </div>
+    </div>
+</body>
+<p>2024 Yo estudio</p>
+</html>

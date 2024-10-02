@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receptor de Resultados</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .info {
+            background-color: #f0f0f0;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .button-group {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .button-group button {
+            padding: 10px 15px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button-group button:hover {
+            background-color: #0056b3;
+        }
+        .pdf-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .pdf-list li {
+            padding: 10px;
+            background-color: #e0e0e0;
+            margin-bottom: 5px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .pdf-list li span {
+            flex-grow: 1;
+            margin-left: 10px;
+        }
+        .pdf-list li button {
+            background-color: #28a745;
+            border: none;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .pdf-list li button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Receptor de Resultados</h1>
+        <div class="info">
+            <p>Total de usuarios que enviaron resultados: <strong>26</strong></p>
+            <div class="button-group">
+                <button onclick="unifyAndDownload()">Unificar en un solo PDF</button>
+                <button onclick="compressAndDownload()">Comprimir PDFs</button>
+            </div>
+        </div>
+
+        <ul class="pdf-list">
+            <!-- Lista de PDFs enviados por los usuarios -->
+            <li>
+                <span>Resultado Usuario 1</span>
+                <button>Descargar</button>
+            </li>
+            <li>
+                <span>Resultado Usuario 2</span>
+                <button>Descargar</button>
+            </li>
+            <!-- Repite para cada usuario -->
+        </ul>
+    </div>
+
+    <script>
+        function unifyAndDownload() {
+            // Aquí iría la lógica para unificar los PDFs en un solo archivo
+            alert("Unificar y descargar PDF");
+        }
+
+        function compressAndDownload() {
+            // Aquí iría la lógica para comprimir todos los PDFs en un archivo comprimido
+            alert("Comprimir y descargar PDFs");
+        }
+    </script>
+</body>
+</html>

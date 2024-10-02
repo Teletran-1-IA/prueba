@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Vocacional - Ingeniería</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        h3 {
+            color: #2c3e50;
+        }
+        #resultado {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <h1>Test de Orientación Vocacional - Carreras de Ingeniería</h1>
+
+    <!-- Formulario de Preguntas -->
+    <form id="testVocacional">
+        <!-- Preguntas de Personalidad (Preguntas 1-3) -->
+        <p>Pregunta 1: ¿Te consideras una persona organizada?</p>
+        <input type="radio" name="pregunta1" value="1"> Poco<br>
+        <input type="radio" name="pregunta1" value="2"> Algo<br>
+        <input type="radio" name="pregunta1" value="3"> Mucho<br>
+
+        <p>Pregunta 2: ¿Disfrutas trabajar en equipo?</p>
+        <input type="radio" name="pregunta2" value="1"> Poco<br>
+        <input type="radio" name="pregunta2" value="2"> Algo<br>
+        <input type="radio" name="pregunta2" value="3"> Mucho<br>
+
+        <p>Pregunta 3: ¿Te consideras creativo?</p>
+        <input type="radio" name="pregunta3" value="1"> Poco<br>
+        <input type="radio" name="pregunta3" value="2"> Algo<br>
+        <input type="radio" name="pregunta3" value="3"> Mucho<br>
+
+        <!-- Preguntas de Habilidades (Preguntas 4-6) -->
+        <p>Pregunta 4: ¿Tienes facilidad para resolver problemas técnicos?</p>
+        <input type="radio" name="pregunta4" value="1"> Poco<br>
+        <input type="radio" name="pregunta4" value="2"> Algo<br>
+        <input type="radio" name="pregunta4" value="3"> Mucho<br>
+
+        <p>Pregunta 5: ¿Te gusta trabajar con herramientas o maquinaria?</p>
+        <input type="radio" name="pregunta5" value="1"> Poco<br>
+        <input type="radio" name="pregunta5" value="2"> Algo<br>
+        <input type="radio" name="pregunta5" value="3"> Mucho<br>
+
+        <p>Pregunta 6: ¿Tienes habilidades matemáticas avanzadas?</p>
+        <input type="radio" name="pregunta6" value="1"> Poco<br>
+        <input type="radio" name="pregunta6" value="2"> Algo<br>
+        <input type="radio" name="pregunta6" value="3"> Mucho<br>
+
+        <!-- Preguntas de Intereses (Preguntas 7-9) -->
+        <p>Pregunta 7: ¿Te interesan los avances tecnológicos?</p>
+        <input type="radio" name="pregunta7" value="1"> Poco<br>
+        <input type="radio" name="pregunta7" value="2"> Algo<br>
+        <input type="radio" name="pregunta7" value="3"> Mucho<br>
+
+        <p>Pregunta 8: ¿Te atrae el estudio del medio ambiente?</p>
+        <input type="radio" name="pregunta8" value="1"> Poco<br>
+        <input type="radio" name="pregunta8" value="2"> Algo<br>
+        <input type="radio" name="pregunta8" value="3"> Mucho<br>
+
+        <p>Pregunta 9: ¿Te interesa el diseño de sistemas y procesos?</p>
+        <input type="radio" name="pregunta9" value="1"> Poco<br>
+        <input type="radio" name="pregunta9" value="2"> Algo<br>
+        <input type="radio" name="pregunta9" value="3"> Mucho<br>
+
+        <!-- El resultado se muestra dinámicamente -->
+    </form>
+
+    <!-- Bloque de Resultados -->
+    <div id="resultado">
+        <div id="carrerasRecomendadas"></div>
+    </div>
+
+    <script>
+    const carreras = {
+        "Ingeniería Civil": { personalidad: 3, habilidades: 5, intereses: 4 },
+        "Ingeniería Petrolera": { personalidad: 3, habilidades: 5, intereses: 4 },
+        "Ingeniería Química": { personalidad: 4, habilidades: 4, intereses: 3 },
+        "Ingeniería Electrónica": { personalidad: 3, habilidades: 5, intereses: 5 },
+        "Ingeniería Industrial": { personalidad: 4, habilidades: 3, intereses: 4 },
+        "Ingeniería Mecánica y Electromecánica": { personalidad: 4, habilidades: 4, intereses: 5 },
+        "Ingeniería Metalúrgica y de Materiales": { personalidad: 3, habilidades: 4, intereses: 3 },
+        "Ingeniería Ambiental": { personalidad: 5, habilidades: 3, intereses: 5 },
+        "Ingeniería Eléctrica": { personalidad: 3, habilidades: 5, intereses: 4 },
+        "Ingeniería en Producción Empresarial": { personalidad: 4, habilidades: 3, intereses: 4 },
+        "Ingeniería Autotrónica": { personalidad: 3, habilidades: 5, intereses: 5 },
+        "Ingeniería Textil": { personalidad: 4, habilidades: 3, intereses: 3 },
+        "Ingeniería de Sistemas": { personalidad: 4, habilidades: 5, intereses: 5 },
+        "Ingeniería de Software": { personalidad: 4, habilidades: 5, intereses: 5 },
+        "Ingeniería en Telecomunicaciones": { personalidad: 3, habilidades: 5, intereses: 4 },
+        "Ingeniería Biomédica": { personalidad: 5, habilidades: 4, intereses: 4 },
+        "Ingeniería en Energías Renovables": { personalidad: 4, habilidades: 4, intereses: 5 }
+    };
+
+    // Función para obtener las respuestas del usuario
+    function obtenerRespuestas() {
+        const respuestas = {};
+        let todasRespondidas = true;
+
+        // Recolectar respuestas de las preguntas
+        for (let i = 1; i <= 9; i++) {
+            const pregunta = `pregunta${i}`;
+            const respuestaSeleccionada = document.querySelector(`input[name="${pregunta}"]:checked`);
+            if (respuestaSeleccionada) {
+                respuestas[pregunta] = parseInt(respuestaSeleccionada.value);
+            } else {
+                respuestas[pregunta] = 0;  // Si no ha seleccionado ninguna respuesta
+                todasRespondidas = false;  // Marca que no están todas respondidas
+            }
+        }
+
+        return { respuestas, todasRespondidas };
+    }
+
+    // Función para calcular los resultados de afinidad
+    function calcularResultado() {
+        const { respuestas, todasRespondidas } = obtenerRespuestas();
+        const pesos = { personalidad: 0.4, habilidades: 0.3, intereses: 0.3 };
+
+        // Afinidades de carreras
+        const afinidades = {};
+        for (const carrera in carreras) {
+            let afinidad = 0;
+
+            // Ponderación de respuestas sobre las carreras según la afinidad específica
+            afinidad += respuestas.pregunta1 * carreras[carrera].personalidad * pesos.personalidad; // Pregunta de personalidad
+            afinidad += respuestas.pregunta4 * carreras[carrera].habilidades * pesos.habilidades;  // Pregunta de habilidades
+            afinidad += respuestas.pregunta7 * carreras[carrera].intereses * pesos.intereses;    // Pregunta de intereses
+
+            afinidades[carrera] = afinidad;
+        }
+
+        // Ordenar carreras por afinidades
+        const carrerasOrdenadas = Object.keys(afinidades).sort((a, b) => afinidades[b] - afinidades[a]);
+
+        // Mostrar las 3 mejores opciones si todas las preguntas están respondidas
+        if (todasRespondidas) {
+            mostrarResultados(carrerasOrdenadas.slice(0, 3));
+        }
+    }
+
+    // Función para mostrar los resultados
+    function mostrarResultados(carreras) {
+        const carrerasRecomendadas = document.getElementById("carrerasRecomendadas");
+        carrerasRecomendadas.innerHTML = "<h3>Carreras recomendadas:</h3>";
+        carreras.forEach(carrera => {
+            carrerasRecomendadas.innerHTML += `<p>${carrera}</p>`;
+        });
+    }
+
+    // Asignar el evento 'onchange' a las preguntas para hacer el cálculo dinámico
+    document.querySelectorAll('input[type="radio"]').forEach(radio => {
+        radio.addEventListener('change', calcularResultado);
+    });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

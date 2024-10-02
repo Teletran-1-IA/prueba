@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba de orientacion vocacional</title>
+
+<style>
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.recuadro {
+    width: 1200px;             /* Ancho inicial del recuadro */
+    max-width: 300%;          /* Ancho máximo del recuadro */
+    padding: 20px;            /* Espacio interior */
+    margin: 20px auto;        /* Centrado en la página */
+    border: 1px solid #003366; /* Borde del recuadro */
+    background-color: #f0f4f8; /* Fondo claro */
+    border-radius: 10px;      /* Bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    font-family: Arial, sans-serif; /* Fuente */
+    font-size: 13px;
+}
+
+.recuadro h2 {
+    color: #0c0b0b;           /* Color del título */
+    margin-bottom: 10px;      /* Espacio debajo del título */
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.recuadro p {
+    color: #333;              /* Color del texto */
+    margin-bottom: 10px;      /* Espacio debajo del párrafo */
+}
+h1 { 
+    margin: 20px 0 0 90px;
+    color: #003366;
+}
+ 
+    .three-d-divider {
+    border: 0;
+    height: 3px;
+    background: #c5c5c3;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    margin: 30px 0;
+    
+}
+
+strong{
+    color: #01213f;
+}
+strong:after {
+  content: "";
+  display: block; 
+  margin-bottom: 10px  ;
+}
+.question {
+    margin-bottom: 50px;
+}
+
+label {
+    display: block;
+    margin-bottom: 2px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+label:hover {
+    background-color: #e9e9e9;
+    border-color: #aaa;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+input[type="radio"]:checked + label {
+    background-color: #d1e7dd;
+    border-color: #0f5132;
+    color: #0f5132;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+.result {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #dff0d8;
+    color: #3c763d;
+    border: 1px solid #d6e9c6;
+    border-radius: 5px;
+    display: none;
+    font-family: 'Roboto', sans-serif; /* Aplica la fuente Roboto */
+    line-height: 1.6; /* Incrementa la separación entre las líneas */
+}
+ 
+.pregunta {
+        font-family: Arial, sans-serif; /* Negrita (por defecto en strong) */
+        color: #030303; /* Color del texto de la pregunta */
+        font-size: 18px; /* Tamaño de la fuente de la pregunta */
+        margin-bottom: 10px; /* Espaciado debajo de la pregunta */
+        display: block; /* Hace que la pregunta ocupe toda la línea */
+}
+</style>
+    <body>
+        <h1>Test General</h1>
+        <hr class="three-d-divider"> 
+        <div class="recuadro">
+            <h2>Este test está diseñado para evaluar tus conocimientos que a través de una serie de preguntas de opción múltiple, este test pondrá a prueba tu entendimiento 
+            y memoria sobre una diversidad de temas.
+            Instrucciones
+            <ul>
+                <li>Lee atentamente cada pregunta antes de seleccionar tu respuesta.</li>
+                <li>Selecciona la opción que consideres correcta para cada pregunta.</li>
+                <li>No te preocupes si no sabes la respuesta a alguna pregunta. Responde lo mejor que puedas y continúa.</li>
+                <li>Tómate tu tiempo para pensar bien cada respuesta, pero ten en cuenta el límite de tiempo total del test.</li>
+            </ul>           
+            Este test es una excelente oportunidad para evaluar tus conocimientos generales y descubrir nuevas áreas de 
+            interés. No te desanimes si encuentras preguntas difíciles; cada error es una oportunidad para aprender algo 
+            nuevo.</h2>
+            <h2>¡Buena suerte!</h2>
+        </div>
+        <div class="container">
+            <form id="testForm">
+                <div class="pregunta">
+                <div class="question">
+                    <h2>INTERESES</h2>
+                    <strong>1. ¿Qué actividad prefieres realizar en tu tiempo libre?</strong>
+                    <input type="radio" id="q1a" name="q1" value="a">
+                    <label for="q1a">Leer sobre avances médicos o científicos.</label><br>
+                    <input type="radio" id="q1b" name="q1" value="b">
+                    <label for="q1b">Diseñar o construir cosas nuevas.</label><br>
+                    <input type="radio" id="q1c" name="q1" value="c">
+                    <label for="q1c">Organizar eventos o gestionar proyectos.</label>
+                </div>
+                <div class="question">
+                    <strong>2. ¿Qué tipo de libros o artículos prefieres leer?</strong>
+                    <input type="radio" id="q2a" name="q2" value="a">
+                    <label for="q2a">Temas de salud y bienestar.</label><br>
+                    <input type="radio" id="q2b" name="q2" value="b">
+                    <label for="q2b">Innovaciones tecnológicas.</label><br>
+                    <input type="radio" id="q2c" name="q2" value="c">
+                    <label for="q2c">Economía y finanzas.</label>
+                </div>
+                <div class="question">
+                    <strong>3.¿Cuál de las siguientes actividades disfrutas más?</strong>
+                    <input type="radio" id="q3a" name="q3" value="a">
+                    <label for="q3a">Ayudar a personas con problemas de salud.</label><br>
+                    <input type="radio" id="q3b" name="q3" value="b">
+                    <label for="q3b">Resolver problemas técnicos o de ingeniería.</label><br>
+                    <input type="radio" id="q3c" name="q3" value="c">
+                    <label for="q3c">Analizar datos financieros.</label>
+                </div>
+                <div class="question">
+                    <strong>4.¿Qué tipo de programas de televisión o documentales te interesan más?</strong>
+                    <input type="radio" id="q4a" name="q4" value="a">
+                    <label for="q4a">Programas sobre medicina y salud.</label><br>
+                    <input type="radio" id="q4b" name="q4" value="b">
+                    <label for="q4b">Documentales sobre tecnología y ciencia.</label><br>
+                    <input type="radio" id="q4c" name="q4" value="c">
+                    <label for="q4c">Programas sobre negocios y administración.</label>
+                </div>
+                <div class="question">
+                    <strong>5.¿Qué tipo de proyectos te gustaría desarrollar?</strong>
+                    <input type="radio" id="q5a" name="q5" value="a">
+                    <label for="q5a">Proyectos que mejoren la salud pública.</label><br>
+                    <input type="radio" id="q5b" name="q5" value="b">
+                    <label for="q5b">Proyectos de construcción o ingeniería.</label><br>
+                    <input type="radio" id="q5c" name="q5" value="c">
+                    <label for="q5c">Proyectos empresariales o turísticos.</label>
+                </div>
+                <h2>HABILIDADES</h2>
+                <div class="question">
+                    <strong>6.¿Qué habilidad te resulta más fácil desarrollar?</strong>
+                    <input type="radio" id="q6a" name="q6" value="a">
+                    <label for="q6a">Comprender términos y conceptos médicos.</label><br>
+                    <input type="radio" id="q6b" name="q6" value="b">
+                    <label for="q6b">Manejar herramientas y equipos tecnológicos.</label><br>
+                    <input type="radio" id="q6c" name="q6" value="c">
+                    <label for="q6c">Gestionar recursos y coordinar equipos.</label>
+                </div>
+                <div class="question">
+                    <strong>7.¿En qué área te sientes más competente?</strong>
+                    <input type="radio" id="q7a" name="q7" value="a">
+                    <label for="q7a">Cuidado y atención de personas.</label><br>
+                    <input type="radio" id="q7b" name="q7" value="b">
+                    <label for="q7b">Solución de problemas matemáticos y físicos.</label><br>
+                    <input type="radio" id="q7c" name="q7" value="c">
+                    <label for="q7c">Planificación y organización de tareas.</label>
+                </div>
+                <div class="question">
+                    <strong>8.¿Qué tipo de trabajo en equipo prefieres?</strong>
+                    <input type="radio" id="q8a" name="q8" value="a">
+                    <label for="q8a">Trabajar con profesionales de la salud.</label><br>
+                    <input type="radio" id="q8b" name="q8" value="b">
+                    <label for="q8b">Colaborar con ingenieros y técnicos.</label><br>
+                    <input type="radio" id="q8c" name="q8" value="c">
+                    <label for="q8c">Coordinar con equipos administrativos.</label>
+                </div>
+                <div class="question">
+                    <strong>9.¿Qué tipo de problemas disfrutas resolver?</strong>
+                    <input type="radio" id="q9a" name="q9" value="a">
+                    <label for="q9a">Problemas relacionados con la salud.</label><br>
+                    <input type="radio" id="q9b" name="q9" value="b">
+                    <label for="q9b">Problemas técnicos o de diseño.</label><br>
+                    <input type="radio" id="q9c" name="q9" value="c">
+                    <label for="q9c">Problemas organizacionales o de gestión.</label>
+                </div>
+                <div class="question">
+                    <strong>10.¿Qué habilidad te gustaría mejorar?</strong>
+                    <input type="radio" id="q10a" name="q10" value="a">
+                    <label for="q10a">Técnicas de primeros auxilios.</label><br>
+                    <input type="radio" id="q10b" name="q10" value="b">
+                    <label for="q10b">Programación y desarrollo de software.</label><br>
+                    <input type="radio" id="q10c" name="q10" value="c">
+                    <label for="q10c">Habilidades de liderazgo y negociación.</label>
+                </div>
+                <h2>Personalidad</h2>
+                <div class="question">
+                    <strong>11.¿Cómo describes tu enfoque hacia los desafíos?</strong>
+                    <input type="radio" id="q11a" name="q11" value="a">
+                    <label for="q11a">Empático y orientado al cuidado de otros.</label><br>
+                    <input type="radio" id="q11b" name="q11" value="b">
+                    <label for="q11b">Analítico y orientado a la solución técnica.</label><br>
+                    <input type="radio" id="q11c" name="q11" value="c">
+                    <label for="q11c">Estratégico y orientado a la organización.</label>
+                </div>
+                <div class="question">
+                    <strong>12.¿Qué tipo de ambiente de trabajo prefieres?</strong>
+                    <input type="radio" id="q12a" name="q12" value="a">
+                    <label for="q12a">Un ambiente clínico o hospitalario.</label><br>
+                    <input type="radio" id="q12b" name="q12" value="b">
+                    <label for="q12b">Un laboratorio o planta de producción.</label><br>
+                    <input type="radio" id="q12c" name="q12" value="c">
+                    <label for="q12c">Una oficina o entorno empresarial.</label>
+                </div>
+                <div class="question">
+                    <strong>13.¿Cómo manejas el estrés?</strong>
+                    <input type="radio" id="q13a" name="q13" value="a">
+                    <label for="q13a">Hablando con amigos o familiares.</label><br>
+                    <input type="radio" id="q13b" name="q13" value="b">
+                    <label for="q13b">Realizando actividades prácticas o manuales.</label><br>
+                    <input type="radio" id="q13c" name="q13" value="c">
+                    <label for="q13c">Planificando y organizando tu tiempo.</label>
+                </div>
+                <div class="question">
+                    <strong>14.¿Qué actitud tomas frente a los errores?</strong>
+                    <input type="radio" id="q14a" name="q14" value="a">
+                    <label for="q14a">Aprendes y buscas cómo mejorar la salud del paciente.</label><br>
+                    <input type="radio" id="q14b" name="q14" value="b">
+                    <label for="q14b">Analizas el error para mejorar el diseño o proceso.</label><br>
+                    <input type="radio" id="q14c" name="q14" value="c">
+                    <label for="q14c">Revisas la estrategia y ajustas la planificación.</label>
+                </div>
+                <div class="question">
+                    <strong>15.¿Cómo te ves en el futuro?</strong>
+                    <input type="radio" id="q15a" name="q15" value="a">
+                    <label for="q15a">Trabajando en un hospital o clínica.</label><br>
+                    <input type="radio" id="q15b" name="q15" value="b">
+                    <label for="q15b">Diseñando o mejorando sistemas tecnológicos.</label><br>
+                    <input type="radio" id="q15c" name="q15" value="c">
+                    <label for="q15c">Liderando una empresa o proyecto.</label>
+                </div>
+                <h2>Intereses específicos</h2>
+                <div class="question">
+                    <strong>16.¿Qué te motiva más al elegir una carrera?</strong>
+                    <input type="radio" id="q16a" name="q16" value="a">
+                    <label for="q16a">Ayudar a mejorar la calidad de vida de las personas.</label><br>
+                    <input type="radio" id="q16b" name="q16" value="b">
+                    <label for="q16b">Innovar y crear nuevas tecnologías.</label><br>
+                    <input type="radio" id="q16c" name="q16" value="c">
+                    <label for="q16c">Administrar y hacer crecer un negocio.</label>
+                </div>
+                <div class="question">
+                    <strong>17.¿Qué tipo de estudios te interesan más?</strong>
+                    <input type="radio" id="q17a" name="q17" value="a">
+                    <label for="q17a">Estudiar biología o química.</label><br>
+                    <input type="radio" id="q17b" name="q17" value="b">
+                    <label for="q17b">Estudiar física o matemáticas.</label><br>
+                    <input type="radio" id="q17c" name="q17" value="c">
+                    <label for="q17c">Estudiar economía o administración.</label>
+                </div>
+                <div class="question">
+                    <strong>18.¿Qué tipo de tareas disfrutas más?</strong>
+                    <input type="radio" id="q18a" name="q18" value="a">
+                    <label for="q18a">Realizar diagnósticos médicos</label><br>
+                    <input type="radio" id="q18b" name="q18" value="b">
+                    <label for="q18b">Desarrollar soluciones tecnológicas.</label><br>
+                    <input type="radio" id="q18c" name="q18" value="c">
+                    <label for="q18c">Planificar estrategias empresariales.</label><br>
+                </div>
+                <div class="question">
+                    <strong>19.¿Qué prefieres hacer en un proyecto grupal?</strong>
+                    <input type="radio" id="q19a" name="q19" value="a">
+                    <label for="q19a">Cuidar y asistir a los demás.</label><br>
+                    <input type="radio" id="q19b" name="q19" value="b">
+                    <label for="q19b">Encargarte del diseño y construcción.</label><br>
+                    <input type="radio" id="q19c" name="q19" value="c">
+                    <label for="q19c">Coordinar y gestionar el proyecto.</label>
+                </div>
+                <div class="question">
+                    <strong>20.¿Qué te resulta más gratificante en tu trabajo?</strong>
+                    <input type="radio" id="q20a" name="q20" value="a">
+                    <label for="q20a">Ver mejoras en la salud de las personas.</label><br>
+                    <input type="radio" id="q20b" name="q20" value="b">
+                    <label for="q20b">Lograr innovaciones tecnológicas.</label><br>
+                    <input type="radio" id="q20c" name="q20" value="c">
+                    <label for="q20c">Alcanzar objetivos empresariales.</label>
+                </div>
+                <h2>Habilidades específicas</h2>
+                <div class="question">
+                    <strong>21.¿Qué tipo de habilidades manuales tienes?</strong>
+                    <input type="radio" id="q21a" name="q21" value="a">
+                    <label for="q21a">Habilidades en primeros auxilios o procedimientos médicos.</label><br>
+                    <input type="radio" id="q21b" name="q21" value="b">
+                    <label for="q21b">Habilidades en reparación y mantenimiento de equipos.</label><br>
+                    <input type="radio" id="q21c" name="q21" value="c">
+                    <label for="q21c">Habilidades en manejo de recursos y planificación.</label>
+                </div>
+                <div class="question">
+                    <strong>22.¿Qué tipo de habilidades analíticas posees?</strong>
+                    <input type="radio" id="q22a" name="q22" value="a">
+                    <label for="q22a">Análisis de casos clínicos.</label><br>
+                    <input type="radio" id="q22b" name="q22" value="b">
+                    <label for="q22b">Análisis de problemas técnicos.</label><br>
+                    <input type="radio" id="q22c" name="q22" value="c">
+                    <label for="q22c">Análisis de datos financieros.</label>
+                </div>
+                <div class="question">
+                    <strong>23.¿Qué tipo de habilidades comunicativas tienes?</strong>
+                    <input type="radio" id="q23a" name="q23" value="a">
+                    <label for="q23a">Comunicarte eficazmente con pacientes.</label><br>
+                    <input type="radio" id="q23b" name="q23" value="b">
+                    <label for="q23b">Explicar conceptos técnicos complejos.</label><br>
+                    <input type="radio" id="q23c" name="q23" value="c">
+                    <label for="q23c">Presentar y defender proyectos empresariales.</label>
+                </div>
+                <div class="question">
+                    <strong>24.¿Qué tipo de habilidades organizativas posees?</strong>
+                    <input type="radio" id="q24a" name="q24" value="a">
+                    <label for="q24a">Organizar tratamientos y cuidados.</label><br>
+                    <input type="radio" id="q24b" name="q24" value="b">
+                    <label for="q24b">Organizar procesos de producción.</label><br>
+                    <input type="radio" id="q24c" name="q24" value="c">
+                    <label for="q24c">Organizar y gestionar proyectos.</label>
+                </div>
+                <div class="question">
+                    <strong>25.¿Qué tipo de habilidades tecnológicas tienes?</strong>
+                    <input type="radio" id="q25a" name="q25" value="a">
+                    <label for="q25a">Uso de equipos médicos y software clínico.</label><br>
+                    <input type="radio" id="q25b" name="q25" value="b">
+                    <label for="q25b">Programación y manejo de herramientas tecnológicas.</label><br>
+                    <input type="radio" id="q25c" name="q25" value="c">
+                    <label for="q25c">Uso de software de gestión empresarial.</label>
+                </div>
+                <h2>Personalidad específica</h2>
+                <div class="question">
+                    <strong>26.¿Cómo te describen tus amigos?</strong>
+                    <input type="radio" id="q26a" name="q26" value="a">
+                    <label for="q26a">Empático y preocupado por el bienestar de otros.</label><br>
+                    <input type="radio" id="q26b" name="q26" value="b">
+                    <label for="q26b">Ingenioso y solucionador de problemas.</label><br>
+                    <input type="radio" id="q26c" name="q26" value="c">
+                    <label for="q26c">Líder y buen organizador.</label>
+                </div>
+                <div class="question">
+                    <strong>27.¿Qué valoras más en tu trabajo?</strong>
+                    <input type="radio" id="q27a" name="q27" value="a">
+                    <label for="q27a">La posibilidad de ayudar a los demás.</label><br>
+                    <input type="radio" id="q27b" name="q27" value="b">
+                    <label for="q27b">La oportunidad de innovar y crear.</label><br>
+                    <input type="radio" id="q27c" name="q27" value="c">
+                    <label for="q27c">La capacidad de gestionar y liderar.</label>
+                </div>
+                <div class="question">
+                    <strong>28.¿Qué te frustra más en el trabajo?</strong>
+                    <input type="radio" id="q28a" name="q28" value="a">
+                    <label for="q28a">No poder ayudar a un paciente.</label><br>
+                    <input type="radio" id="q28b" name="q28" value="b">
+                    <label for="q28b">Encontrar un problema técnico sin solución inmediata.</label><br>
+                    <input type="radio" id="q28c" name="q28" value="c">
+                    <label for="q28c">No alcanzar los objetivos planificados.</label>
+                </div>
+                <div class="question">
+                    <strong>29.¿Qué tipo de reconocimiento prefieres?</strong>
+                    <input type="radio" id="q29a" name="q29" value="a">
+                    <label for="q29a">Reconocimiento por tu empatía y cuidado.</label><br>
+                    <input type="radio" id="q29b" name="q29" value="b">
+                    <label for="q29b">Reconocimiento por tus innovaciones técnicas.</label><br>
+                    <input type="radio" id="q29c" name="q29" value="c">
+                    <label for="q29c">Reconocimiento por tus habilidades de liderazgo.</label>
+                </div>
+                <div class="question">
+                    <strong>30.¿Qué te hace sentir más realizado profesionalmente?</strong>
+                    <input type="radio" id="q30a" name="q30" value="a">
+                    <label for="q30a">Ver a tus pacientes mejorar.</label><br>
+                    <input type="radio" id="q30b" name="q30" value="b">
+                    <label for="q30b">Ver tus soluciones tecnológicas en funcionamiento.</label><br>
+                    <input type="radio" id="q30c" name="q30" value="c">
+                    <label for="q30c">Ver tu empresa o proyecto crecer y prosperar.</label>
+                </div>
+                </div>
+                <button type="button" onclick="calcularResultado()">Calcular Resultado</button>
+</form>
+<div id="result" class="result"></div>
+<div id="mensaje-error" style="color: #ff0000; display: none; margin-top: 30px; font-family: Arial, sans-serif;;"></div>
+<div id="resultado" style="display: none;">
+    <h2>Resultado del Test</h2>
+    <p>Carrera sugerida: <span id="carreraSugerida"></span></p>
+    <p>Descripción de la carrera:</p>
+    <p id="descripcionCarrera"></p>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>

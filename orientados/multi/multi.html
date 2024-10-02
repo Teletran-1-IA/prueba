@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba de orientacion vocacional</title>
+</head>
+<style>
+    .container {
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .recuadro {
+    width: 1200px;             /* Ancho inicial del recuadro */
+    max-width: 300%;          /* Ancho máximo del recuadro */
+    padding: 20px;            /* Espacio interior */
+    margin: 20px auto;        /* Centrado en la página */
+    border: 1px solid #003366; /* Borde del recuadro */
+    background-color: #f0f4f8; /* Fondo claro */
+    border-radius: 10px;      /* Bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    font-family: Arial, sans-serif; /* Fuente */
+    font-size: 13px;
+}
+
+.recuadro h2 {
+    color: #0c0b0b;           /* Color del título */
+    margin-bottom: 10px;      /* Espacio debajo del título */
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.recuadro p {
+    color: #333;              /* Color del texto */
+    margin-bottom: 10px;      /* Espacio debajo del párrafo */
+}
+
+    
+    h1 { 
+        margin: 20px 0 0 90px;
+        color: #003366;
+    }
+ 
+        .three-d-divider {
+        border: 0;
+        height: 3px;
+        background: #c5c5c3;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+        margin: 30px 0;
+    }
+    
+    strong{
+        color: #01213f;
+    }
+    strong:after {
+      content: "";
+      display: block; 
+      margin-bottom: 10px  ;
+    }
+/* Estilo para la sección de preguntas */
+.pregunta {
+    font-family: Arial, sans-serif;
+    color: #030303;
+    font-size: 18px;
+    margin-bottom: 20px; /* Aumenté el espaciado para dar más separación entre las preguntas */
+}
+
+/* Estilo para el contenedor de las opciones */
+.question {
+    margin-bottom: 40px; /* Espaciado entre las preguntas */
+}
+
+/* Estilo para las etiquetas que rodean las opciones de radio */
+label {
+    display: block;
+    margin-bottom: 8px; /* Espaciado entre las opciones */
+    padding: 12px; /* Aumenté el padding para dar más espacio interno */
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+/* Estilo para el hover sobre las etiquetas */
+label:hover {
+    background-color: #e9e9e9;
+    border-color: #aaa;
+}
+
+/* Ocultar los botones de radio para que sólo se vea la etiqueta personalizada */
+input[type="radio"] {
+    display: none;
+}
+
+/* Estilo para la etiqueta seleccionada */
+input[type="radio"]:checked + label {
+    background-color: #d1e7dd;
+    border-color: #0f5132;
+    color: #0f5132;
+}
+
+/* Estilo para el botón de enviar o calcular */
+button {
+    display: block;
+    width: 100%;
+    padding: 12px; /* Aumenté el padding para un botón más grande */
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px; /* Aumenté el tamaño de la fuente */
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Estilo para el botón cuando se hace hover */
+button:hover {
+    background-color: #218838;
+}
+
+/* Estilo para la sección de resultados */
+.result {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #dff0d8;
+    color: #3c763d;
+    border: 1px solid #d6e9c6;
+    border-radius: 5px;
+    display: none;
+    font-family: 'Roboto', sans-serif; /* Aplica la fuente Roboto */
+    line-height: 1.6; /* Incrementa la separación entre las líneas */
+}
+
+/* Estilo para el encabezado de los resultados */
+.result h2 {
+    margin-bottom: 15px;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Estilo para los párrafos dentro de la sección de resultados */
+.result p {
+    color: #333;
+    margin-bottom: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+    </style>
+    <body>
+        <h1>Test de Carreras Tecnocientificas</h1>
+        <hr class="three-d-divider">
+        <div class="recuadro">
+            <h2>Este test está diseñado para evaluar tus conocimientos en diversas áreas y aspectos. A lo largo 
+                de este test, te encontrarás con una serie de preguntas de opción múltiple que pondrán a prueba tu comprensión 
+                de los conceptos fundamentales y avanzados uqe consideramos importantes.
+                <p>Instrucciones:</p>
+                <ul>
+                    <li> Lee cuidadosamente cada pregunta antes de seleccionar tu respuesta.</li>
+                    <li> Selecciona la opción que consideres correcta para cada pregunta.</li>
+                    <li> No te preocupes si no sabes la respuesta a alguna pregunta. Haz lo mejor que puedas y sigue adelante.</li>
+                    <li> Tómate tu tiempo para pensar bien cada respuesta, pero ten en cuenta el límite de tiempo total del test.</li>
+                </ul>            
+                Este test es una herramienta para ayudarte a identificar tus fortalezas y áreas de oportunidad en el campo de 
+                las ciencias de la Salud. No te desanimes si encuentras preguntas difíciles; cada error es una oportunidad para 
+                aprender.</h2>
+                <h2>¡Buena suerte!</h2>
+    </div>
+    <div class="container">
+        <div id="preguntas">
+            <div class="pregunta">
+                <strong>1. ¿Qué actividad disfrutas más?</strong>
+                <div class="question">
+                    <input type="radio" id="opcion1_pregunta1" name="pregunta1" value="1">
+                    <label for="opcion1_pregunta1">Diseñar y construir modelos o estructuras.</label><br>
+                    <input type="radio" id="opcion2_pregunta1" name="pregunta1" value="2">
+                    <label for="opcion2_pregunta1">Desmontar y arreglar aparatos electrónicos.</label><br>
+                    <input type="radio" id="opcion3_pregunta1" name="pregunta1" value="3">
+                    <label for="opcion3_pregunta1">Realizar experimentos en un laboratorio.</label><br>
+                </div>
+            </div>
+            <div class="pregunta">
+                <strong>2. ¿Cuál de estos temas te resulta más interesante?</strong>
+                <div class="question">
+                    <input type="radio" id="opcion1_pregunta2" name="pregunta2" value="1">
+                    <label for="opcion1_pregunta2">La tecnología de los aviones y cómo funcionan.</label><br>
+                    <input type="radio" id="opcion2_pregunta2" name="pregunta2" value="2">
+                    <label for="opcion2_pregunta2">El estudio de las propiedades químicas de los materiales.</label><br>
+                    <input type="radio" id="opcion3_pregunta2" name="pregunta2" value="3">
+                    <label for="opcion3_pregunta2">La planificación y ejecución de proyectos de construcción.</label><br>
+                </div>
+            </div>
+            <div class="pregunta">
+                <strong>3. ¿Qué prefieres hacer en tu tiempo libre?</strong>
+                <div class="question">
+                    <input type="radio" id="opcion1_pregunta3" name="pregunta3" value="1">
+                    <label for="opcion1_pregunta3">Reparar y mejorar dispositivos electrónicos.</label><br>
+                    <input type="radio" id="opcion2_pregunta3" name="pregunta3" value="2">
+                    <label for="opcion2_pregunta3">Analizar mapas y datos geográficos.</label><br>
+                    <input type="radio" id="opcion3_pregunta3" name="pregunta3" value="3">
+                    <label for="opcion3_pregunta3">Leer sobre avances en química y biotecnología.</label><br>
+                </div>
+            </div>
+            <div class="pregunta">
+                <strong>4. ¿Qué aspecto del trabajo en equipo te parece más importante?</strong>
+                <div class="question">
+                    <input type="radio" id="opcion1_pregunta4" name="pregunta4" value="1">
+                    <label for="opcion1_pregunta4">Coordinar la instalación de sistemas eléctricos.</label><br>
+                    <input type="radio" id="opcion2_pregunta4" name="pregunta4" value="2">
+                    <label for="opcion2_pregunta4">Colaborar en el diseño de maquinaria o sistemas mecánicos.</label><br>
+                    <input type="radio" id="opcion3_pregunta4" name="pregunta4" value="3">
+                    <label for="opcion3_pregunta4">Contribuir con análisis químicos y pruebas de laboratorio.</label><br>
+                </div>
+            </div>
+            <div class="pregunta">
+                <strong>5. ¿Te sientes más satisfecho cuando…?</strong>
+                <div class="question">
+                    <input type="radio" id="opcion1_pregunta5" name="pregunta5" value="1">
+                    <label for="opcion1_pregunta5">Solucionas problemas técnicos complejos.</label><br>
+                    <input type="radio" id="opcion2_pregunta5" name="pregunta5" value="2">
+                    <label for="opcion2_pregunta5">Tienes la oportunidad de trabajar al aire libre midiendo terrenos.</label><br>
+                    <input type="radio" id="opcion3_pregunta5" name="pregunta5" value="3">
+                    <label for="opcion3_pregunta5">Desarrollas nuevas fórmulas o productos químicos.</label><br>
+                </div>
+            </div>
+            <div class="pregunta">
+                <strong>6. ¿Cómo te imaginas en tu trabajo ideal?</strong>
+                <div class="question">
+                    <input type="radio" id="opcion1_pregunta6" name="pregunta6" value="1">
+                    <label for="opcion1_pregunta6">Operando y manteniendo maquinaria pesada.</label><br>
+                    <input type="radio" id="opcion2_pregunta6" name="pregunta6" value="2">
+                    <label for="opcion2_pregunta6">Trabajando en un laboratorio con compuestos químicos.</label><br>
+                    <input type="radio" id="opcion3_pregunta6" name="pregunta6" value="3">
+                    <label for="opcion3_pregunta6">Desarrollando software o sistemas de telecomunicaciones.</label><br>
+                </div>
+            </div>
+            <div class="pregunta">
+                <strong>7. ¿Qué tipo de proyectos te motivan más?</strong>
+                <div class="question">
+                    <input type="radio" id="opcion1_pregunta7" name="pregunta7" value="1">
+                    <label for="opcion1_pregunta7">Proyectos de construcción y diseño de infraestructuras.</label><br>
+                    <input type="radio" id="opcion2_pregunta7" name="pregunta7" value="2">
+                    <label for="opcion2_pregunta7">Innovaciones en automóviles y motores.</label><br>
+                    <input type="radio" id="opcion3_pregunta7" name="pregunta7" value="3">
+                    <label for="opcion3_pregunta7">Desarrollo de nuevos medicamentos y productos farmacéuticos.</label><br>
+                </div>
+            </div>
+            <div class="pregunta">
+                <strong>8. ¿Qué prefieres estudiar?</strong>
+                <div class="question">
+                    <input type="radio" id="opcion1_pregunta8" name="pregunta8" value="1">
+                    <label for="opcion1_pregunta8">El diseño y funcionamiento de sistemas eléctricos e industriales.</label><br>
+                    <input type="radio" id="opcion2_pregunta8" name="pregunta8" value="2">
+                    <label for="opcion2_pregunta8">Los principios de la química y la biología molecular.</label><br>
+                    <input type="radio" id="opcion3_pregunta8" name="pregunta8" value="3">
+                    <label for="opcion3_pregunta8">La geografía física y los sistemas de información geográfica.</label><br>
+                </div>
+            </div>
+            <div class="pregunta">
+                <strong>9. ¿Qué tipo de entorno de trabajo te atrae más?</strong>
+                <div class="question">
+                    <input type="radio" id="opcion1_pregunta9" name="pregunta9" value="1">
+                    <label for="opcion1_pregunta9">Un taller mecánico o una fábrica.</label><br>
+                    <input type="radio" id="opcion2_pregunta9" name="pregunta9" value="2">
+                    <label for="opcion2_pregunta9">Un laboratorio de investigación química.</label><br>
+                    <input type="radio" id="opcion3_pregunta9" name="pregunta9" value="3">
+                    <label for="opcion3_pregunta9">Un sitio de construcción o una oficina de planificación urbana.</label><br>
+                </div>
+            </div>
+            <div class="pregunta">
+                <strong>10. ¿Cómo te sientes al enfrentar un problema técnico?</strong>
+                <div class="question">
+                    <input type="radio" id="opcion1_pregunta10" name="pregunta10" value="1">
+                    <label for="opcion1_pregunta10">Me encanta descomponerlo y buscar la mejor solución.</label><br>
+                    <input type="radio" id="opcion2_pregunta10" name="pregunta10" value="2">
+                    <label for="opcion2_pregunta10">Me gusta analizarlo desde un punto de vista científico.</label><br>
+                    <input type="radio" id="opcion3_pregunta10" name="pregunta10" value="3">
+                    <label for="opcion3_pregunta10">Prefiero trabajar en equipo para resolverlo.</label><br>
+                </div>
+            </div>
+            <div class="pregunta">
+                <strong>11. ¿Qué aspecto de la tecnología te interesa más?</strong>
+                <div class="question">
+                    <input type="radio" id="opcion1_pregunta11" name="pregunta11" value="1">
+                    <label for="opcion1_pregunta11">El desarrollo de vehículos más eficientes y avanzados.</label><br>
+                    <input type="radio" id="opcion2_pregunta11" name="pregunta11" value="2">
+                    <label for="opcion2_pregunta11">La producción de compuestos químicos para diferentes industrias.</label><br>
+                    <input type="radio" id="opcion3_pregunta11" name="pregunta11" value="3">
+                    <label for="opcion3_pregunta11">Los sistemas de telecomunicaciones y redes de información.</label><br>
+                </div>
+            </div>
+            <div class="pregunta">
+                <strong>12. ¿Qué te gusta más de los proyectos a largo plazo?</strong>
+                <div class="question">
+                    <input type="radio" id="opcion1_pregunta12" name="pregunta12" value="1">
+                    <label for="opcion1_pregunta12">Ver cómo una construcción toma forma y se completa.</label><br>
+                    <input type="radio" id="opcion2_pregunta12" name="pregunta12" value="2">
+                    <label for="opcion2_pregunta12">Desarrollar nuevos procesos industriales.</label><br>
+                    <input type="radio" id="opcion3_pregunta12" name="pregunta12" value="3">
+                    <label for="opcion3_pregunta12">Realizar investigación científica y ver sus resultados aplicados.</label><br>
+                </div>
+            </div>
+            <div class="pregunta">
+                <strong>13. ¿Qué actividad preferirías realizar durante una excursión educativa?</strong>
+                <div class="question">
+                    <input type="radio" id="opcion1_pregunta13" name="pregunta13" value="1">
+                    <label for="opcion1_pregunta13">Explorar y medir terrenos para un proyecto de geodesia.</label><br>
+                    <input type="radio" id="opcion2_pregunta13" name="pregunta13" value="2">
+                    <label for="opcion2_pregunta13">Visitar una fábrica y conocer su proceso de producción.</label><br>
+                    <input type="radio" id="opcion3_pregunta13" name="pregunta13" value="3">
+                    <label for="opcion3_pregunta13">Observar cómo se desarrollan y prueban nuevos medicamentos.</label><br>
+                </div>
+            </div>
+            <div class="pregunta">
+                <strong>14. ¿Qué tipo de problemas te gustaría resolver?</strong>
+                <div class="question">
+                    <input type="radio" id="opcion1_pregunta14" name="pregunta14" value="1">
+                    <label for="opcion1_pregunta14">Mejorar la eficiencia energética en sistemas industriales.</label><br>
+                    <input type="radio" id="opcion2_pregunta14" name="pregunta14" value="2">
+                    <label for="opcion2_pregunta14">Resolver ecuaciones químicas complejas para desarrollar productos innovadores.</label><br>
+                    <input type="radio" id="opcion3_pregunta14" name="pregunta14" value="3">
+                    <label for="opcion3_pregunta14">Optimizar el diseño y mantenimiento de vehículos.</label><br>
+                </div>
+            </div>
+            <div class="pregunta">
+                <strong>15. ¿Qué prefieres en un trabajo?</strong>
+                <div class="question">
+                    <input type="radio" id="opcion1_pregunta15" name="pregunta15" value="1">
+                    <label for="opcion1_pregunta15">La innovación en tecnología aeronáutica.</label><br>
+                    <input type="radio" id="opcion2_pregunta15" name="pregunta15" value="2">
+                    <label for="opcion2_pregunta15">La estabilidad y precisión en la construcción civil.</label><br>
+                    <input type="radio" id="opcion3_pregunta15" name="pregunta15" value="3">
+                    <label for="opcion3_pregunta15">La investigación y desarrollo de productos farmacéuticos.</label><br>
+                </div>
+            </div>
+            
+            <button type="button" onclick="calcularResultado()">Calcular Resultado</button>
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+            <canvas id="afinidadChart" width="400" height="400"></canvas>
+            <div id="result" class="result"></div>
+            <div id="mensaje-error" style="color: #ff0000; display: none; margin-top: 30px; font-family: Arial, sans-serif;"></div>
+            <div id="resultado" style="display: none;">
+                <h2>Resultado del Test</h2>
+                <p>Carrera sugerida: <span id="carreraSugerida"></span></p>
+                <p>Descripción de la carrera:</p>
+                <p id="descripcionCarrera"></p>
+            </div>
+            
+            <script src="script.js"></script>
+        </body>
+</html>            

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba de orientación vocacional</title>
+    <style>
+        /* Estilos generales */
+.intro-container {
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #2c3e50;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+/* Estilos específicos */
+.highlight {
+    color: #003366;
+    font-weight: bold;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #2980b9;
+}
+
+/* Animación para el título */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+h1 {
+    animation: fadeIn 1.5s ease-in-out;
+}
+/*aumento*/
+        .box {
+    border: 1px solid #224244;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #95eccf;
+    margin: 10px 90px;
+}
+h3, h4 {
+    color: #1d1c1c;
+
+}
+    </style>
+</head>
+<body>
+    <link rel="stylesheet" href="css/style.css">
+    <header>
+        <div class="content">
+            <div class="menu container">
+                <a href="Inicio.html" class="logo">Introducción</a>
+                <input type="checkbox" id="menu"/>
+                <label for="menu">
+            </div>
+        </div>  
+    </header>
+</body>
+<body>
+    <h1>BIENVENIDO (A) <span id="nombreUsuario"></span></h1>
+        <div class="box">
+            <div class="intro-container">
+                <h1><span class="highlight">YO ESTUDIO</span></h1>
+                
+                <p>Tu compañero en el emocionante viaje hacia tu futuro profesional.</p>
+                
+                <p>Estás a punto de embarcarte en una de las etapas más cruciales y emocionantes de tu vida: la educación superior. Sabemos que elegir una carrera puede ser desafiante, pero estamos aquí para guiarte.</p>
+                
+                <p>Nuestra plataforma ha sido diseñada pensando en ti, para ofrecerte una orientación precisa y personalizada. A través de nuestro test de orientación vocacional, descubrirás tus fortalezas, pasiones y habilidades únicas, permitiéndote tomar decisiones informadas sobre tu futuro académico y profesional.</p>
+                
+                <p>Recuerda, como seres conscientes y en constante evolución, nuestro aprendizaje nunca se detiene. Ya sea que avances paso a paso o a pasos agigantados, cada día es una oportunidad para crecer y descubrir tu verdadero potencial.</p>
+                
+                <p>Déjanos ser tu brújula en este emocionante camino de autodescubrimiento.</p>
+                
+                
+                <h3>Prueba de Orientación Vocacional</h3>
+                <h4>¿Qué es una Prueba de Orientación Vocacional?</h4>
+                <p>Una prueba de orientación vocacional es una herramienta que evalúa tus intereses, habilidades y preferencias personales para sugerir posibles carreras o campos de estudio.</p> <p>A través de una serie de preguntas cuidadosamente elaboradas, esta prueba te proporcionará una visión clara de tus fortalezas y áreas de interés, ayudándote a identificar las profesiones que podrían ser más satisfactorias y adecuadas para ti.</p>
+                
+                <h3>¿Por qué es Importante?</h3>
+                <p>Elegir una carrera es una de las decisiones más importantes que tomarás en tu vida.</p> <p>Una elección bien informada puede conducir a una vida profesional satisfactoria y exitosa.</p> <p>Esta prueba te brinda una guía objetiva y personalizada basada en tus respuestas, dándote la confianza para explorar y decidir tu futuro con más certeza.</p>
+                
+                <h3>¿Cómo Funciona?</h3>
+                <p>
+                    1. <strong>Responde las Preguntas:</strong> La prueba consta de preguntas relacionadas con tus intereses, habilidades y valores personales.<br>
+                    2. <strong>Analiza tus Resultados:</strong> Una vez completada la prueba, recibirás un análisis detallado de tus respuestas.<br>
+                    3. <strong>Explora tus Opciones:</strong> Basado en tu análisis, recibirás recomendaciones de carreras y campos de estudio que se alinean con tus características.
+                </p>
+                
+                <h3>Beneficios de la Prueba de Orientación Vocacional</h3>
+                <p>
+                    - <strong>Autoconocimiento:</strong> Conocer más sobre tus fortalezas y áreas de interés.<br>
+                    - <strong>Toma de Decisiones:</strong> Facilitar el proceso de decisión sobre tu futuro 
+                    educativo y profesional.<br>
+                    - <strong>Planificación:</strong> Ayudarte a planificar tu educación y carrera de manera más efectiva.
+                </p>
+                
+                <p>¡Descubre tu futuro hoy mismo! Realiza nuestra Prueba de Orientación Vocacional y da el primer paso hacia una carrera que te apasiona.</p>
+                <a href="Inicio.html" class="cta-button">¡Comienza tu test ahora!</a>
+        </div>
+
+    <script>
+        // Recuperar el nombre del localStorage
+        var nombre = localStorage.getItem("nombreUsuario");
+
+        // Mostrar el nombre en el elemento con id "nombreUsuario"
+        document.getElementById("nombreUsuario").textContent = nombre;
+    </script>
+</body>
+</html>

@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba de orientacion vocacional</title>
+</head>
+<style>
+    .container {
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .recuadro {
+    width: 1200px;             /* Ancho inicial del recuadro */
+    max-width: 300%;          /* Ancho máximo del recuadro */
+    padding: 20px;            /* Espacio interior */
+    margin: 20px auto;        /* Centrado en la página */
+    border: 1px solid #003366; /* Borde del recuadro */
+    background-color: #f0f4f8; /* Fondo claro */
+    border-radius: 10px;      /* Bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    font-family: Arial, sans-serif; /* Fuente */
+    font-size: 13px;
+}
+
+.recuadro h2 {
+    color: #0c0b0b;           /* Color del título */
+    margin-bottom: 10px;      /* Espacio debajo del título */
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.recuadro p {
+    color: #333;              /* Color del texto */
+    margin-bottom: 10px;      /* Espacio debajo del párrafo */
+}
+
+    h1 { 
+        margin: 20px 0 0 90px;
+        color: #003366;
+    }
+
+        .three-d-divider {
+        border: 0;
+        height: 3px;
+        background: #c5c5c3;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+        margin: 30px 0;
+    }
+    
+    strong{
+        color: #01213f;
+    }
+    strong:after {
+      content: "";
+      display: block; 
+      margin-bottom: 10px  ;
+    }
+    .question {
+        margin-bottom: 50px;
+    }
+    
+    label {
+        display: block;
+        margin-bottom: 2px;
+        padding: 10px;
+        background-color: #f9f9f9;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s, border-color 0.3s;
+    }
+    
+    label:hover {
+        background-color: #e9e9e9;
+        border-color: #aaa;
+    }
+    
+    input[type="radio"] {
+        display: none;
+    }
+    
+    input[type="radio"]:checked + label {
+        background-color: #d1e7dd;
+        border-color: #0f5132;
+        color: #0f5132;
+    }
+    
+    button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background-color: #28a745;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    
+    button:hover {
+        background-color: #218838;
+    }
+    
+    .result {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #dff0d8;
+    color: #3c763d;
+    border: 1px solid #d6e9c6;
+    border-radius: 5px;
+    display: none;
+    font-family: 'Roboto', sans-serif; /* Aplica la fuente Roboto */
+    line-height: 1.6; /* Incrementa la separación entre las líneas */
+    }
+
+    .pregunta {
+            font-family: Arial, sans-serif; /* Negrita (por defecto en strong) */
+            color: #030303; /* Color del texto de la pregunta */
+            font-size: 18px; /* Tamaño de la fuente de la pregunta */
+            margin-bottom: 10px; /* Espaciado debajo de la pregunta */
+            display: block; /* Hace que la pregunta ocupe toda la línea */
+    }
+    /*estilo de recuadros*/
+    .carreras-recomendadas {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.recuadro-carrera {
+    border: 1px solid #ddd;
+    padding: 15px;
+    width: 30%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.recuadro-carrera h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.recuadro-carrera p {
+    font-size: 14px;
+    color: #555;
+}
+    </style>
+<body>
+    <h1>Test de Ciencias Biologicas</h1>    
+    <hr class="three-d-divider"> 
+    <div class="recuadro">
+    <h2>Este test está diseñado para evaluar tus conocimientos en diversas 
+        áreas de la biología, incluyendo, la ecología, la genética, la botánica, y la zoología. A lo largo 
+        de este test, te encontrarás con una serie de preguntas de opción múltiple que pondrán a prueba tu comprensión 
+        de los conceptos fundamentales y avanzados de las ciencias biológicas.
+        <p>Instrucciones:</p>
+        <ul>
+            <li> Lee cuidadosamente cada pregunta antes de seleccionar tu respuesta.</li>
+            <li> Selecciona la opción que consideres correcta para cada pregunta.</li>
+            <li> No te preocupes si no sabes la respuesta a alguna pregunta. Haz lo mejor que puedas y sigue adelante.</li>
+            <li> Tómate tu tiempo para pensar bien cada respuesta, pero ten en cuenta el límite de tiempo total del test.</li>
+        </ul>            
+        Este test es una herramienta para ayudarte a identificar tus fortalezas y áreas de oportunidad en el campo de 
+        las ciencias biológicas. No te desanimes si encuentras preguntas difíciles; cada error es una oportunidad para 
+        aprender.</h2>
+        <h2>¡Buena suerte!</h2>
+    </div>
+    <div class="container">
+    <div id="preguntas">
+        <div class="pregunta">
+            <strong>1. ¿Te consideras una persona paciente y dedicada al cuidado de seres vivos?</strong>
+            <div class="question">
+                <input type="radio" id="opcion1_pregunta1" name="pregunta1" value="2">
+                <label for="opcion1_pregunta1">Si, mucho.</label><br>
+                <input type="radio" id="opcion2_pregunta1" name="pregunta1" value="1">
+                <label for="opcion2_pregunta1">Poco.</label><br>
+                <input type="radio" id="opcion3_pregunta1" name="pregunta1" value="0">
+                <label for="opcion3_pregunta1">Nada.</label><br>
+            </div>
+        </div>
+        <div class="pregunta">
+            <strong>2. ¿Disfrutas trabajar al aire libre y en contacto con la naturaleza?</strong>
+            <div class="question">
+                <input type="radio" id="opcion1_pregunta2" name="pregunta2" value="2">
+                <label for="opcion1_pregunta2">Sin mucho.</label><br>
+                <input type="radio" id="opcion2_pregunta2" name="pregunta2" value="1">
+                <label for="opcion2_pregunta2">Poco.</label><br>
+                <input type="radio" id="opcion3_pregunta2" name="pregunta2" value="0">
+                <label for="opcion3_pregunta2">No.</label><br>
+            </div>
+        </div>
+        <div class="pregunta">
+            <strong>3. ¿Eres una persona observadora, que presta atención a los pequeños detalles?</strong>
+            <div class="question">
+                <input type="radio" id="opcion1_pregunta3" name="pregunta3" value="2">
+                <label for="opcion1_pregunta3">Si, mucho.</label><br>
+                <input type="radio" id="opcion2_pregunta3" name="pregunta3" value="1">
+                <label for="opcion2_pregunta3">Poco.</label><br>
+                <input type="radio" id="opcion3_pregunta3" name="pregunta3" value="0">
+                <label for="opcion3_pregunta3">No.</label>
+            </div>
+        </div>
+        <div class="pregunta">
+            <strong>4. ¿Te sientes cómodo/a enfrentando situaciones impredecibles relacionadas con la naturaleza o los animales?</strong>
+            <div class="question">
+                <input type="radio" id="opcion1_pregunta4" name="pregunta4" value="2">
+                <label for="opcion1_pregunta4">Si, mucho.</label><br>
+                <input type="radio" id="opcion2_pregunta4" name="pregunta4" value="1">
+                <label for="opcion2_pregunta4">Poco.</label><br>
+                <input type="radio" id="opcion3_pregunta4" name="pregunta4" value="0">
+                <label for="opcion3_pregunta4">No.</label><br>
+            </div>
+        </div>
+        <div class="pregunta">
+            <strong>5. ¿Tienes una fuerte sensibilidad hacia el bienestar animal y el cuidado del medio ambiente?</strong>
+            <div class="question">
+                <input type="radio" id="opcion1_pregunta5" name="pregunta5" value="2">
+                <label for="opcion1_pregunta5">Si, mucho.</label><br>
+                <input type="radio" id="opcion2_pregunta5" name="pregunta5" value="1">
+                <label for="opcion2_pregunta5">Poco.</label><br>
+                <input type="radio" id="opcion3_pregunta5" name="pregunta5" value="0">
+                <label for="opcion3_pregunta5">No.</label><br>
+            </div>
+        </div>
+        <div class="pregunta">
+            <strong>6. ¿Te interesa el estudio de los procesos biológicos y la vida de los seres vivos?</strong>
+            <div class="question">
+                <input type="radio" id="opcion1_pregunta6" name="pregunta6" value="2">
+                <label for="opcion1_pregunta6">Mucho.</label><br>
+                <input type="radio" id="opcion2_pregunta6" name="pregunta6" value="1">
+                <label for="opcion2_pregunta6">Poco.</label><br>
+                <input type="radio" id="opcion3_pregunta6" name="pregunta6" value="0">
+                <label for="opcion3_pregunta6">No.</label><br>
+            </div>
+        </div>
+        <div class="pregunta">
+            <strong>7. ¿Te apasiona la idea de mejorar la producción agrícola o pecuaria mediante técnicas científicas?</strong>
+            <div class="question">
+                <input type="radio" id="opcion1_pregunta7" name="pregunta7" value="2">
+                <label for="opcion1_pregunta7">Si, mucho.</label><br>
+                <input type="radio" id="opcion2_pregunta7" name="pregunta7" value="1">
+                <label for="opcion2_pregunta7">Poco.</label><br>
+                <input type="radio" id="opcion3_pregunta7" name="pregunta7" value="0">
+                <label for="opcion3_pregunta7">No.</label>
+            </div>
+        </div>
+        <div class="pregunta">
+            <strong>8. ¿Te gustaría participar en la conservación de especies animales o en la mejora de cultivos?</strong>
+            <div class="question">
+                <input type="radio" id="opcion1_pregunta8" name="pregunta8" value="2">
+                <label for="opcion1_pregunta8">Si, mucho.</label><br>
+                <input type="radio" id="opcion2_pregunta8" name="pregunta8" value="1">
+                <label for="opcion2_pregunta8">Poco.</label><br>
+                <input type="radio" id="opcion3_pregunta8" name="pregunta8" value="0">
+                <label for="opcion3_pregunta8">No.</label><br>
+            </div>
+        </div>
+        <div class="pregunta">
+            <strong>9. ¿Te interesa la biotecnología y su aplicación en la agricultura o la medicina veterinaria?</strong>
+            <div class="question">
+                <input type="radio" id="opcion1_pregunta9" name="pregunta9" value="2">
+                <label for="opcion1_pregunta9">Si, mucho.</label><br>
+                <input type="radio" id="opcion2_pregunta9" name="pregunta9" value="1">
+                <label for="opcion2_pregunta9">Poco.</label><br>
+                <input type="radio" id="opcion3_pregunta9" name="pregunta9" value="0">
+                <label for="opcion3_pregunta9">No.</label><br>
+            </div>
+        </div>
+        <div class="pregunta">
+            <strong>10. ¿Te sientes atraído/a por la investigación sobre el comportamiento, nutrición o reproducción de los animales?</strong>
+            <div class="question">
+                <input type="radio" id="opcion1_pregunta10" name="pregunta10" value="2">
+                <label for="opcion1_pregunta10">Si, mucho.</label><br>
+                <input type="radio" id="opcion2_pregunta10" name="pregunta10" value="1">
+                <label for="opcion2_pregunta10">Poco.</label><br>
+                <input type="radio" id="opcion3_pregunta10" name="pregunta10" value="0">
+                <label for="opcion3_pregunta10">No.</label><br>
+            </div>
+        </div>
+        <div class="pregunta">
+            <strong>11. ¿Tienes facilidad para aprender y aplicar conceptos de biología, química y ciencias afines?</strong>
+            <div class="question">
+                <input type="radio" id="opcion1_pregunta11" name="pregunta11" value="2">
+                <label for="opcion1_pregunta11">Si, mucho</label><br>
+                <input type="radio" id="opcion2_pregunta11" name="pregunta11" value="1">
+                <label for="opcion2_pregunta11">Poco.</label><br>
+                <input type="radio" id="opcion3_pregunta11" name="pregunta11" value="0">
+                <label for="opcion3_pregunta11">No.</label><br>
+            </div>
+        </div>
+        <div class="pregunta">
+            <strong>12. ¿Te consideras hábil para trabajar con herramientas y técnicas de laboratorio en estudios biológicos?</strong>
+            <div class="question">
+                <input type="radio" id="opcion1_pregunta12" name="pregunta12" value="2">
+                <label for="opcion1_pregunta12">Si, mucho.</label><br>
+                <input type="radio" id="opcion2_pregunta12" name="pregunta12" value="1">
+                <label for="opcion2_pregunta12">Poco.</label><br>
+                <input type="radio" id="opcion3_pregunta12" name="pregunta12" value="0">
+                <label for="opcion3_pregunta12">No.</label><br>
+            </div>
+        </div>
+        <div class="pregunta">
+            <strong>13. ¿Puedes manejar y cuidar animales con confianza y cuidado?</strong>
+            <div class="question">
+                <input type="radio" id="opcion1_pregunta13" name="pregunta13" value="2">
+                <label for="opcion1_pregunta13">Si, mucho.</label><br>
+                <input type="radio" id="opcion2_pregunta13" name="pregunta13" value="1">
+                <label for="opcion2_pregunta13">Poco.</label><br>
+                <input type="radio" id="opcion3_pregunta13" name="pregunta13" value="0">
+                <label for="opcion3_pregunta13">No.</label><br>
+            </div>
+        </div>
+        <div class="pregunta">
+            <strong>14. ¿Tienes la habilidad de planificar y ejecutar proyectos agrícolas o ganaderos?</strong>
+            <div class="question">
+                <input type="radio" id="opcion1_pregunta14" name="pregunta14" value="2">
+                <label for="opcion1_pregunta14">Si, mucho.</label><br>
+                <input type="radio" id="opcion2_pregunta14" name="pregunta14" value="1">
+                <label for="opcion2_pregunta14">Poco.</label><br>
+                <input type="radio" id="opcion3_pregunta14" name="pregunta14" value="0">
+                <label for="opcion3_pregunta14">No.</label><br>
+            </div>
+        </div>
+        <div class="pregunta">
+            <strong>15. ¿Te sientes capaz de diagnosticar y tratar problemas en cultivos o en la salud animal?</strong>
+            <div class="question">
+                <input type="radio" id="opcion1_pregunta15" name="pregunta15" value="2">
+                <label for="opcion1_pregunta15">Si, mucho</label><br>
+                <input type="radio" id="opcion2_pregunta15" name="pregunta15" value="1">
+                <label for="opcion2_pregunta15">Poco.</label><br>
+                <input type="radio" id="opcion3_pregunta15" name="pregunta15" value="0">
+                <label for="opcion3_pregunta15">No.</label><br>
+            </div>
+        </div>
+        <button type="button" onclick="calcularResultado()">Calcular Resultado</button>
+        
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <canvas id="afinidadChart" width="400" height="400"></canvas>
+        </div></div>
+        <div id="result" class="result"></div>
+        <div id="mensaje-error" ></div>
+        <div id="resultado" style="display: none;">
+            
+            <div id="carrerasRecomendadas" class="carreras-recomendadas"></div>
+        </div>
+<script src="script.js"></script>
+</body>
+</html>
