@@ -82,8 +82,79 @@ function obtenerDescripcionCarrera(carrera) {
     </ul>
 </div>
 `,
-        "Psicología": ``,
-        "Ciencias del Desarrollo": ``,
+        "Psicología": `<div class="carrera">
+    <h3 class="titulo-carrera">Psicología en Bolivia</h3>
+    <p class="descripcion-carrera">La <strong>carrera de Psicología</strong> en Bolivia se centra en la formación de profesionales capacitados para comprender y abordar las complejidades de la mente humana y el comportamiento. Esta disciplina es esencial para el bienestar social y la salud mental, y su desarrollo ha sido significativo en el país. A continuación, se presenta una descripción detallada de esta carrera, su perfil profesional, áreas de acción y las instituciones que la ofrecen.</p>
+
+    <h4 class="subtitulo">Perfil Profesional</h4>
+    <p>El psicólogo está preparado para:</p>
+    <ul class="lista-habilidades">
+        <li><strong>Evaluar y diagnosticar</strong> trastornos psicológicos.</li>
+        <li><strong>Desarrollar e implementar</strong> planes de intervención terapéutica.</li>
+        <li><strong>Realizar investigaciones</strong> en el ámbito de la psicología.</li>
+        <li><strong>Trabajar en equipos multidisciplinarios</strong> para abordar problemas de salud mental.</li>
+        <li><strong>Promover la salud mental</strong> y el bienestar en diversas poblaciones.</li>
+    </ul>
+
+    <h4 class="subtitulo">Áreas de Acción</h4>
+    <p>Los graduados en Psicología pueden desempeñarse en diversas áreas, tales como:</p>
+    <ul class="lista-areas">
+        <li><strong>Psicología Clínica:</strong> Atención directa a pacientes con trastornos mentales o emocionales.</li>
+        <li><strong>Psicología Educativa:</strong> Intervención en contextos escolares para mejorar el aprendizaje y el desarrollo emocional de los estudiantes.</li>
+        <li><strong>Psicología Organizacional:</strong> Aplicación de principios psicológicos en entornos laborales para mejorar el rendimiento y bienestar de los empleados.</li>
+        <li><strong>Psicología Social:</strong> Estudio y promoción del bienestar comunitario, abordando problemas sociales a través de intervenciones psicológicas.</li>
+        <li><strong>Psicología Forense:</strong> Evaluación psicológica en contextos legales, incluyendo testimonios y asesoramiento en casos judiciales.</li>
+    </ul>
+
+    <h4 class="subtitulo">Instituciones que Ofrecen la Carrera</h4>
+    <ul class="lista-instituciones">
+        <li><strong>Universidad Católica Boliviana "San Pablo" (UCB):</strong> Fundada en 1971, es reconocida por su sólida formación académica y ofrece programas desde la licenciatura hasta el doctorado en Psicología.</li>
+        <li><strong>Universidad Autónoma Gabriel René Moreno (UAGRM):</strong> Ofrece una licenciatura en Psicología con un enfoque práctico y teórico, preparando a los estudiantes para diversas áreas de intervención.</li>
+        <li><strong>Universidad Privada del Valle (UPV):</strong> Destacada por su plan de estudios actualizado y su compromiso con la formación integral del psicólogo.</li>
+        <li><strong>Universidad Privada Franz Tamayo (Unifranz):</strong> Proporciona una formación que integra teoría y práctica, preparando a los estudiantes para responder a los desafíos del campo psicológico.</li>
+        <li><strong>Universidad Técnica de Oruro (UTO):</strong> Ofrece un programa completo que abarca diversas especialidades dentro de la psicología.</li>
+        <li><strong>Universidad Adventista de Bolivia (UAB):</strong> Se enfoca en la detección y tratamiento de patologías psicológicas, formando profesionales comprometidos con el bienestar social.</li>
+    </ul>
+
+    <h4 class="subtitulo">Conclusión</h4>
+    <p>La carrera de Psicología en Bolivia es fundamental para abordar las necesidades crecientes en el ámbito de la salud mental y el bienestar social. Los psicólogos formados no solo adquieren habilidades técnicas, sino que también desarrollan una profunda comprensión del contexto social y cultural que influye en la salud mental. Con un enfoque creciente en la investigación y la intervención comunitaria, los profesionales de la psicología están bien preparados para contribuir significativamente al desarrollo social del país.</p>
+</div>`,
+        "Ciencias del Desarrollo": `<div class="carrera">
+    <h3 class="titulo-carrera">Ciencias del Desarrollo en Bolivia</h3>
+    <p class="descripcion-carrera">La <strong>carrera de Ciencias del Desarrollo</strong> en Bolivia se enfoca en la formación de profesionales que abordan problemas sociales, económicos y ambientales desde una perspectiva multidisciplinaria. Esta disciplina busca promover el desarrollo sostenible y mejorar la calidad de vida de las comunidades, integrando conocimientos de diversas áreas como la economía, la sociología, la antropología y la política.</p>
+
+    <h4 class="subtitulo">Perfil Profesional</h4>
+    <p>Los graduados en Ciencias del Desarrollo están preparados para:</p>
+    <ul class="lista-habilidades">
+        <li><strong>Analizar y diagnosticar</strong> problemas sociales y económicos en diferentes contextos.</li>
+        <li><strong>Diseñar e implementar</strong> proyectos de desarrollo que respondan a las necesidades de las comunidades.</li>
+        <li><strong>Evaluar políticas públicas</strong> y programas de desarrollo para medir su efectividad.</li>
+        <li><strong>Promover la participación comunitaria</strong> en procesos de desarrollo.</li>
+        <li><strong>Investigar y generar conocimiento</strong> sobre dinámicas sociales y económicas.</li>
+    </ul>
+
+    <h4 class="subtitulo">Áreas de Acción</h4>
+    <p>Los profesionales en Ciencias del Desarrollo pueden desempeñarse en diversas áreas, tales como:</p>
+    <ul class="lista-areas">
+        <li><strong>Desarrollo Comunitario:</strong> Trabajo directo con comunidades para identificar necesidades y diseñar intervenciones efectivas.</li>
+        <li><strong>Políticas Públicas:</strong> Evaluación y formulación de políticas que promuevan el desarrollo sostenible y la equidad social.</li>
+        <li><strong>Investigación Social:</strong> Realización de estudios para comprender fenómenos sociales y proponer soluciones basadas en evidencia.</li>
+        <li><strong>Gestión de Proyectos:</strong> Planificación, ejecución y evaluación de proyectos destinados a mejorar condiciones sociales y económicas.</li>
+        <li><strong>Desarrollo Sostenible:</strong> Integración de prácticas sostenibles en proyectos de desarrollo para garantizar el uso responsable de los recursos.</li>
+    </ul>
+
+    <h4 class="subtitulo">Instituciones que Ofrecen la Carrera</h4>
+    <ul class="lista-instituciones">
+        <li><strong>Centro de Investigación y Desarrollo en Educación Superior (CIDES) - UMSA:</strong> Ofrece un programa de postgrado en Ciencias del Desarrollo que incluye maestrías en diversas especialidades, como desarrollo económico y gobernanza ambiental.</li>
+        <li><strong>Universidad Mayor de San Andrés (UMSA):</strong> Proporciona formación académica enfocada en el análisis crítico de problemas sociales y económicos, preparando a los estudiantes para abordar desafíos contemporáneos.</li>
+        <li><strong>Universidad Católica Boliviana "San Pablo" (UCB):</strong> Ofrece programas relacionados con el desarrollo social, integrando enfoques teóricos y prácticos.</li>
+        <li><strong>Universidad Autónoma Gabriel René Moreno (UAGRM):</strong> Su currículo incluye aspectos fundamentales del desarrollo humano y social, preparando a los estudiantes para intervenir efectivamente en sus comunidades.</li>
+        <li><strong>Universidad Técnica de Oruro (UTO):</strong> Ofrece formación en ciencias del desarrollo con un enfoque práctico que permite a los estudiantes aplicar sus conocimientos en entornos reales.</li>
+    </ul>
+
+    <h4 class="subtitulo">Conclusión</h4>
+    <p>La carrera de Ciencias del Desarrollo en Bolivia es esencial para abordar los complejos desafíos que enfrenta el país en términos de pobreza, desigualdad y sostenibilidad ambiental. Los profesionales formados en esta área están equipados con las herramientas necesarias para generar cambios significativos en sus comunidades, promoviendo un enfoque integral que considera tanto las necesidades humanas como la protección del medio ambiente. Con un creciente énfasis en la investigación y la participación comunitaria, estos profesionales juegan un papel crucial en el avance hacia un desarrollo más justo y sostenible.</p>
+</div>`,
         "Ciencias de la Comunicación Social": ``,
         "Sociología": ``,
         "Trabajo Social": ``,
