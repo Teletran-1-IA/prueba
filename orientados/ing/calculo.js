@@ -1,80 +1,242 @@
 const carreras = {
-    "Ingeniería Civil": { personalidad: 3, habilidades: 5, intereses: 4 },
-    "Ingeniería Petrolera": { personalidad: 3, habilidades: 5, intereses: 4 },
-    "Ingeniería Química": { personalidad: 4, habilidades: 4, intereses: 3 },
-    "Ingeniería Electrónica": { personalidad: 3, habilidades: 5, intereses: 5 },
-    "Ingeniería Industrial": { personalidad: 4, habilidades: 3, intereses: 4 },
-    "Ingeniería Mecánica y Electromecánica": { personalidad: 4, habilidades: 4, intereses: 5 },
-    "Ingeniería Metalúrgica y de Materiales": { personalidad: 3, habilidades: 4, intereses: 3 },
-    "Ingeniería Ambiental": { personalidad: 5, habilidades: 3, intereses: 5 },
-    "Ingeniería Eléctrica": { personalidad: 3, habilidades: 5, intereses: 4 },
-    "Ingeniería en Producción Empresarial": { personalidad: 4, habilidades: 3, intereses: 4 },
-    "Ingeniería Autotrónica": { personalidad: 3, habilidades: 5, intereses: 5 },
-    "Ingeniería Textil": { personalidad: 4, habilidades: 3, intereses: 3 },
-    "Ingeniería de Sistemas": { personalidad: 4, habilidades: 5, intereses: 5 },
-    "Ingeniería de Software": { personalidad: 4, habilidades: 5, intereses: 5 },
-    "Ingeniería en Telecomunicaciones": { personalidad: 3, habilidades: 5, intereses: 4 },
-    "Ingeniería Biomédica": { personalidad: 5, habilidades: 4, intereses: 4 },
-    "Ingeniería en Energías Renovables": { personalidad: 4, habilidades: 4, intereses: 5 }
+    "Ingeniería Civil": { intereses: 0, habilidades: 0, personalidad: 0 },
+    "Ingeniería Petrolera": { intereses: 0, habilidades: 0, personalidad: 0 },
+    "Ingeniería Química": { intereses: 0, habilidades: 0, personalidad: 0 },
+    "Ingeniería Electrónica": { intereses: 0, habilidades: 0, personalidad: 0 },
+    "Ingeniería Industrial": { intereses: 0, habilidades: 0, personalidad: 0 },
+    "Ingeniería Mecánica y Electromecánica": { intereses: 0, habilidades: 0, personalidad: 0 },
+    "Ingeniería Metalúrgica y de Materiales": { intereses: 0, habilidades: 0, personalidad: 0 },
+    "Ingeniería Ambiental": { intereses: 0, habilidades: 0, personalidad: 0 },
+    "Ingeniería Eléctrica": { intereses: 0, habilidades: 0, personalidad: 0 },
+    "Ingeniería en Producción Empresarial": { intereses: 0, habilidades: 0, personalidad: 0 },
+    "Ingeniería Autotrónica": { intereses: 0, habilidades: 0, personalidad: 0 },
+    "Ingeniería Textil": { intereses: 0, habilidades: 0, personalidad: 0 },
+    "Ingeniería de Sistemas": { intereses: 0, habilidades: 0, personalidad: 0 }
 };
 
-// Función para obtener las respuestas del usuario
-function obtenerRespuestas() {
-    const respuestas = {};
-    let todasRespondidas = true;
+const impactoRespuestas = {
+    '3': ["Ingeniería Electrónica", "Ingeniería de Sistemas", "Ingeniería Autotrónica", "Ingeniería Industrial"],
+    '2': ["Ingeniería Civil", "Ingeniería Mecánica y Electromecánica", "Ingeniería Metalúrgica y de Materiales", "Ingeniería Petrolera"],
+    '1': ["Ingeniería Ambiental", "Ingeniería Química", "Ingeniería Textil", "Ingeniería en Producción Empresarial"]
+};
 
-    // Recolectar respuestas de las preguntas
-    for (let i = 1; i <= 9; i++) {
-        const pregunta = `pregunta${i}`;
-        const respuestaSeleccionada = document.querySelector(`input[name="${pregunta}"]:checked`);
-        if (respuestaSeleccionada) {
-            respuestas[pregunta] = parseInt(respuestaSeleccionada.value);
-        } else {
-            respuestas[pregunta] = 0;  // Si no ha seleccionado ninguna respuesta
-            todasRespondidas = false;  // Marca que no están todas respondidas
-        }
-    }
+function obtenerDescripcionCarrera(carrera) {
+    const descripciones = {
+};
+    return descripciones[carrera] || "Esta carrera se enfoca en áreas específicas de estudio y práctica profesional.";
+}
+let respuestasCapturadas = {};
 
-    return { respuestas, todasRespondidas };
+function capturarRespuesta(pregunta, valor, descripcion) {
+    respuestasCapturadas[pregunta] = { valor: valor, descripcion: descripcion };
 }
 
-// Función para calcular los resultados de afinidad
+// Función para calcular el resultado del test
 function calcularResultado() {
-    const { respuestas, todasRespondidas } = obtenerRespuestas();
-    const pesos = { personalidad: 0.4, habilidades: 0.3, intereses: 0.3 };
+    const mensajeError = document.getElementById('mensaje-error');
+    mensajeError.style.display = 'none';
+    mensajeError.innerText = '';
 
-    // Afinidades de carreras
-    const afinidades = {};
-    for (const carrera in carreras) {
-        let afinidad = 0;
+    const preguntas = document.querySelectorAll('.pregunta');
+    const respuestas = document.querySelectorAll('input[type="radio"]:checked');
 
-        // Ponderación de respuestas sobre las carreras según la afinidad específica
-        afinidad += respuestas.pregunta1 * carreras[carrera].personalidad * pesos.personalidad; // Pregunta de personalidad
-        afinidad += respuestas.pregunta4 * carreras[carrera].habilidades * pesos.habilidades;  // Pregunta de habilidades
-        afinidad += respuestas.pregunta7 * carreras[carrera].intereses * pesos.intereses;    // Pregunta de intereses
-
-        afinidades[carrera] = afinidad;
+    // Verifica si todas las preguntas están respondidas
+    if (respuestas.length !== preguntas.length) {
+        alert('Por favor, responde todas las preguntas antes de ver el resultado del test.');
+        return;
     }
 
-    // Ordenar carreras por afinidades
-    const carrerasOrdenadas = Object.keys(afinidades).sort((a, b) => afinidades[b] - afinidades[a]);
+    // Inicializa la afinidad para cada carrera
+    const afinidad = {
+        "Ingeniería Civil": 0,
+        "Ingeniería Petrolera": 0,
+        "Ingeniería Química": 0,
+        "Ingeniería Electrónica": 0,
+        "Ingeniería Industrial": 0,
+        "Ingeniería Mecánica y Electromecánica": 0,
+        "Ingeniería Metalúrgica y de Materiales": 0,
+        "Ingeniería Ambiental": 0,
+        "Ingeniería Eléctrica": 0,
+        "Ingeniería en Producción Empresarial": 0,
+        "Ingeniería Autotrónica": 0,
+        "Ingeniería Textil": 0,
+        "Ingeniería de Sistemas": 0
+    };
 
-    // Mostrar las 3 mejores opciones si todas las preguntas están respondidas
-    if (todasRespondidas) {
-        mostrarResultados(carrerasOrdenadas.slice(0, 3));
-    }
-}
+    // Procesa cada respuesta seleccionada
+    respuestas.forEach(respuesta => {
+        const valorRespuesta = parseInt(respuesta.value);
+        const nombrePregunta = respuesta.name;
 
-// Función para mostrar los resultados
-function mostrarResultados(carreras) {
-    const carrerasRecomendadas = document.getElementById("carrerasRecomendadas");
-    carrerasRecomendadas.innerHTML = "<h3>Carreras recomendadas:</h3>";
-    carreras.forEach(carrera => {
-        carrerasRecomendadas.innerHTML += `<p>${carrera}</p>`;
+        // Captura de respuestas seleccionadas
+        const descripcion = respuesta.nextElementSibling.innerText; // Texto de la opción seleccionada
+        capturarRespuesta(nombrePregunta, valorRespuesta, descripcion);
+
+        // Lógica de asignación para incluir más carreras
+        if (nombrePregunta === 'pregunta1' || nombrePregunta === 'pregunta2') {
+            afinidad["Ingeniería Civil"] += valorRespuesta;
+            afinidad["Ingeniería Química"] += valorRespuesta;
+        }
+
+        if (nombrePregunta === 'pregunta3' || nombrePregunta === 'pregunta4') {
+            afinidad["Ingeniería Electrónica"] += valorRespuesta;
+            afinidad["Ingeniería Industrial"] += valorRespuesta;
+        }
+
+        if (nombrePregunta === 'pregunta5' || nombrePregunta === 'pregunta6') {
+            afinidad["Ingeniería Mecánica y Electromecánica"] += valorRespuesta;
+            afinidad["Ingeniería Metalúrgica y de Materiales"] += valorRespuesta;
+        }
+
+        if (nombrePregunta === 'pregunta7' || nombrePregunta === 'pregunta8') {
+            afinidad["Ingeniería Ambiental"] += valorRespuesta;
+            afinidad["Ingeniería Eléctrica"] += valorRespuesta;
+        }
+
+        if (nombrePregunta === 'pregunta9' || nombrePregunta === 'pregunta10') {
+            afinidad["Ingeniería en Producción Empresarial"] += valorRespuesta;
+            afinidad["Ingeniería Autotrónica"] += valorRespuesta;
+        }
+
+        if (nombrePregunta === 'pregunta11' || nombrePregunta === 'pregunta12') {
+            afinidad["Ingeniería Textil"] += valorRespuesta;
+            afinidad["Ingeniería de Sistemas"] += valorRespuesta;
+        }
+
+        if (nombrePregunta === 'pregunta13' || nombrePregunta === 'pregunta14') {
+            afinidad["Ingeniería Civil"] += valorRespuesta;
+            afinidad["Ingeniería Petrolera"] += valorRespuesta;
+        }
+
+        if (nombrePregunta === 'pregunta15') {
+            afinidad["Ingeniería Electrónica"] += valorRespuesta;
+            afinidad["Ingeniería Química"] += valorRespuesta;
+        }
     });
+
+    // Ordena las carreras según la afinidad calculada
+    const carrerasOrdenadas = Object.entries(afinidad)
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 3)
+        .map(entry => entry[0]);
+
+    // Muestra el resultado y el gráfico de afinidades
+    mostrarResultado(carrerasOrdenadas, afinidad);
+
+    // Genera el PDF con las respuestas seleccionadas
+    generarPDF(carrerasOrdenadas, afinidad);
 }
 
-// Asignar el evento 'onchange' a las preguntas para hacer el cálculo dinámico
-document.querySelectorAll('input[type="radio"]').forEach(radio => {
-    radio.addEventListener('change', calcularResultado);
-});
+// Función para generar y descargar el PDF
+function generarPDF(carreras, afinidad) {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+
+    // Recuperar los datos del usuario desde el localStorage
+    const nombre = localStorage.getItem("nombreUsuario");
+    const apellido = localStorage.getItem("apellidousuario");
+    const edad = localStorage.getItem("edadusuario");
+    const centro = localStorage.getItem("centrousuario");
+    const curso = localStorage.getItem("cursousuario");
+
+    // Título del PDF
+    doc.setFontSize(18);
+    doc.text("Resultados de Yo Estudio", 10, 20); // Título principal
+
+    // Añadir los datos del usuario
+    doc.setFontSize(14);
+    let y = 30;
+    doc.text("Datos del Usuario:", 10, y);
+    y += 10;
+    doc.text(`Nombre: ${nombre} ${apellido}`, 10, y);
+    y += 10;
+    doc.text(`Edad: ${edad}`, 10, y);
+    y += 10;
+    doc.text(`Centro Educativo: ${centro}`, 10, y);
+    y += 10;
+    doc.text(`Curso: ${curso}`, 10, y);
+
+    // Añadir espacio antes de las carreras sugeridas
+    y += 20;
+    doc.text("Carreras Sugeridas:", 10, y);
+    y += 10;
+
+    // Listar las carreras sugeridas
+    carreras.forEach(carrera => {
+        doc.text(`- ${carrera}`, 10, y);
+        y += 10;
+    });
+
+    // Añadir más espacio para el gráfico
+    y += 20;
+
+    // Capturar el gráfico de afinidad
+    const canvas = document.getElementById('afinidadChart');
+
+    if (canvas) {
+        // Esperar a que el gráfico esté completamente renderizado antes de convertirlo
+        setTimeout(() => {
+            const imgData = canvas.toDataURL('image/png'); // Convertir el gráfico a imagen PNG
+            
+            // Ajustar la posición del gráfico en el PDF
+            doc.addImage(imgData, 'PNG', 10, y, 90, 40); // Añadir el gráfico al PDF
+
+            // Descargar el archivo PDF
+            doc.save("resultados_test.pdf");
+        }, 1000); // Espera 1 segundo para asegurarse de que el gráfico está renderizado completamente
+    } else {
+        doc.text("No se pudo generar el gráfico de afinidad.", 10, y);
+        doc.save("resultados_test.pdf");
+    }
+}
+
+// Función para mostrar el resultado y el gráfico
+function mostrarResultado(carreras, afinidad) {
+    const carrerasRecomendadasDiv = document.getElementById('carrerasRecomendadas');
+    
+    // Limpia el contenido anterior
+    carrerasRecomendadasDiv.innerHTML = '';
+
+    carreras.forEach(carrera => {
+        const recuadro = document.createElement('div');
+        recuadro.className = 'recuadro-carrera';
+        recuadro.innerHTML = `
+            <h3>${carrera}</h3>
+            <p>${obtenerDescripcionCarrera(carrera)}</p>
+        `;
+        carrerasRecomendadasDiv.appendChild(recuadro);
+    });
+
+    // Configuración y creación del gráfico de afinidades usando Chart.js
+    const ctx = document.getElementById('afinidadChart').getContext('2d');
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: carreras,
+            datasets: [{
+                label: 'Gráfico de Afinidad',
+                data: carreras.map(carrera => afinidad[carrera]),
+                backgroundColor: [
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    document.getElementById('resultado').style.display = 'block';
+}
